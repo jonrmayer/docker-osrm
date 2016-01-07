@@ -32,6 +32,8 @@ RUN git clone https://github.com/DennisOSRM/Project-OSRM.git /src \
  && mv /src/profiles/lib/ lib \
  && echo "disk=/tmp/stxxl,25000,syscall" > /build/.stxxl \
  && rm -rf /src
+ 
+WORKDIR /build
 
 # Cleanup --------------------------------
 
