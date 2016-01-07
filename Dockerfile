@@ -23,18 +23,20 @@ RUN apt-get -y update && apt-get install -y \
     libluajit-5.1-dev \
     libtbb-dev
     
-RUN git clone https://github.com/DennisOSRM/Project-OSRM.git /tmp/src \
- && mkdir –p build \
- && cd build \
- && cmake /tmp/src \
- && make \
- && mv /tmp/src/profiles/car.lua profile.lua \
- && mv /tmp/src/profiles/lib/ lib \
- && echo "disk=/tmp/stxxl,25000,syscall" > .stxxl \
- && rm -rf /tmp/src
+RUN mkdir -p /osrm-src \
+ && mkdir -p /osrm-build \
+ && mkdir -p /osrm-data
  
-WORKDIR build
+WORKDIR /osrm-build
 
+RUN git clone https://github.com/DennisOSRM/Project-OSRM.git /osrm-src \
+ && cmake /osrm-src \
+ && make \
+ && mv /osrm-src/profiles/car.lua profile.lua \
+ && mv /osrm-src/profiles/lib/ lib \
+ && echo "disk=/tmp/stxxl,25000,syscall" > .stxxl \
+ && rm -rf /osrm-src
+ 
 # Cleanup --------------------------------
 
 RUN apt-get clean \
