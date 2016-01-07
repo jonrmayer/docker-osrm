@@ -6,11 +6,11 @@ Open Source Routing Machine (OSRM) Docker Image [\[Docker Hub\]](https://hub.doc
 1. Install [Docker](https://www.docker.com/)
 
 2. Manual deploy (optional):
-* Pull automated build from Docker Hub
+  * Pull automated build from Docker Hub
 ```docker pull mudimages/docker-osrm```
-* or build from GitHub
+  * or build from GitHub
 ```$ docker build -t="mudimages/docker-osrm" github.com/mudimages/docker-osrm```
-* or you can clone & build :)
+  * or you can clone & build :)
 ```
 $ git clone https://github.com/mudimages/docker-osrm.git
 $ docker build -t="mudimages/docker-osrm" docker-osrm/
