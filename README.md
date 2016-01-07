@@ -7,16 +7,19 @@ Open Source Routing Machine (OSRM) Docker Image [\[Docker Hub\]](https://hub.doc
 
 2. Manual deploy (optional):
   * Pull automated build from Docker Hub  
-  ```docker pull mudimages/docker-osrm```
+  ```$ docker pull mudimages/docker-osrm```
   * or build from GitHub  
   ```$ docker build -t="mudimages/docker-osrm" github.com/mudimages/docker-osrm```
   * or you can clone & build :)  
-  ```$ git clone https://github.com/mudimages/docker-osrm.git  
-$ docker build -t="mudimages/docker-osrm" docker-osrm/```
+  ```
+  $ git clone https://github.com/mudimages/docker-osrm.git  
+  $ docker build -t="mudimages/docker-osrm" docker-osrm/
+  ```
 
 ## Usage
 Run it:  
 ```docker run -d -p 5000:5000 mudimages/docker-osrm:latest label "http://your/path/to/data.osm.pbf"```  
+
 Explanation:  
 ```-d -> Run container in background and print container ID```  
 ```-p 5000:5000 -> Publish a container port to host```  
