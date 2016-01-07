@@ -18,13 +18,14 @@ Open Source Routing Machine (OSRM) Docker Image [\[Docker Hub\]](https://hub.doc
 
 ## Usage
 Run it:  
-```docker run -d -p 5000:5000 mudimages/docker-osrm:latest label "http://your/path/to/data.osm.pbf"```  
+```docker run -d -p 5000:5000 mudimages/docker-osrm:latest osrm label "http://your/path/to/data.osm.pbf"```  
 
 Explanation:  
 ```-d -> Run container in background and print container ID```  
 ```-p 5000:5000 -> Publish a container port to host```  
+```osrm -> Go via entrypoint script, w/o osrm keyword - classic mode```  
 ```label -> Your label of OSM data```  
 ```url -> Link to OSM data in PBF format```  
 
 For example:  
-```docker run -d -p 5000:5000 mudimages/docker-osrm:latest California "http://download.geofabrik.de/north-america/us/california-latest.osm.pbf"```
+```docker run -d -p 5000:5000 mudimages/docker-osrm:latest osrm California "http://download.geofabrik.de/north-america/us/california-latest.osm.pbf"```
